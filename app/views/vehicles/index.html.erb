@@ -1,0 +1,25 @@
+<p style="color: green" align="center"><%= notice %></p>
+
+<h1 style="background-color: #bc9" align="center">Vehicles</h1>
+<div>
+  <table class="table table-striped table-success table-hover">
+    <thead>
+      <tr align="center">
+        <th scope="col">#ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Category</th>
+        <th scope="col">ShowAction</th>
+        <th scope="col">EditAction</th>
+        <th scope="col">DestroyAction</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vehicles.each do |v| %>
+        <%= render 'vehicle_table_row', vehicle: v %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New vehicle", new_vehicle_path %>
